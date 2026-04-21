@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Jardim Imperial</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="estilo.css" />
+    <script src="script.js"></script>
+    <link
+      href="https://font.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#inicio">
+          <i class="fas fa-leaf me-2"></i>Jardim Imperial
+          <span class="brand-tagline">Floricultura</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                ><i class="fas fa-box"></i> Produtos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="cart-link">
+                <i class="fas fa-shopping-cart"></i> Carrinho
+                <span id="cart-count" class="badge bg-danger">0</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target="#contactModal"
+                ><i class="fas fa-envelope"></i> Contato</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+      <h1 class="text-center mb-4">Nossos Produtos</h1>
+      <div class="row">
+        <div class="col-12 mb-4">
+          <div class="card">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="peonia.jpg" class="card-img" alt="Peonia" />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Peonia em seu florecer</h5>
+                  <p class="card-text">
+                    Imagem para apreciar algo tão belo e não poder possuir! 🌸
+                    Exemplo de flor romântica, 🌱 Prefere solo fértil, ☀️ Luz
+                    solar moderada.
+                  </p>
+                  <p class="price">R$ 45,00</p>
+                  <button
+                    class="btn btn-dark"
+                    onclick="adicionar(this)"
+                    data-product="Peonia"
+                    data-price="45"
+                  >
+                    Adicionar ao carrinho
+                  </button>
+                  <div class="like" onclick="curtir(this, 0)">
+                    ❤ Curtir <span class="like-count">123</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mb-4">
+          <div class="card">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="rosa.jpg" class="card-img" alt="Rosa" />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Rosa Vermelha</h5>
+                  <p class="card-text">
+                    Uma rosa clássica para expressar amor e paixão. 🌹 Símbolo
+                    de amor, 🌿 Arbusto perene, ☀️ Prefere sol pleno.
+                  </p>
+                  <p class="price">R$ 25,00</p>
+                  <button
+                    class="btn btn-dark"
+                    onclick="adicionar(this)"
+                    data-product="Rosa"
+                    data-price="25"
+                  >
+                    Adicionar ao carrinho
+                  </button>
+                  <div class="like" onclick="curtir(this, 0)">
+                    ❤ Curtir <span class="like-count">123</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mb-4">
+          <div class="card">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="lirio.jpg" class="card-img" alt="Lírio" />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Lírio Branco</h5>
+                  <p class="card-text">
+                    Simboliza pureza e elegância em qualquer ocasião. 🕊️
+                    Representa pureza, 🌱 Bulbo perene, 💧 Rega regular.
+                  </p>
+                  <p class="price">R$ 35,00</p>
+                  <button
+                    class="btn btn-dark"
+                    onclick="adicionar(this)"
+                    data-product="Lírio"
+                    data-price="35"
+                  >
+                    Adicionar ao carrinho
+                  </button>
+                  <div class="like" onclick="curtir(this, 0)">
+                    ❤ Curtir <span class="like-count">123</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mb-4">
+          <div class="card">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="tulipa.jpg.webp" class="card-img" alt="Tulipa" />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Tulipa Colorida</h5>
+                  <p class="card-text">
+                    Tulipa vibrante para alegrar o dia. 🌈 Alegria e cor, 🌱
+                    Bulbo sazonal, ❄️ Prefere climas frios.
+                  </p>
+                  <p class="price">R$ 30,00</p>
+                  <button
+                    class="btn btn-dark"
+                    onclick="adicionar(this)"
+                    data-product="Tulipa"
+                    data-price="30"
+                  >
+                    Adicionar ao carrinho
+                  </button>
+                  <div class="like" onclick="curtir(this, 0)">
+                    ❤ Curtir <span class="like-count">123</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mb-4">
+          <div class="card">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="girassol.jpg" class="card-img" alt="Girassol" />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Girassol</h5>
+                  <p class="card-text">
+                    Flor que simboliza alegria e otimismo. 😊 Otimismo, 🌞 Ama
+                    sol, 🌱 Solo bem drenado.
+                  </p>
+                  <p class="price">R$ 40,00</p>
+                  <button
+                    class="btn btn-dark"
+                    onclick="adicionar(this)"
+                    data-product="Girassol"
+                    data-price="40"
+                  >
+                    Adicionar ao carrinho
+                  </button>
+                  <div class="like" onclick="curtir(this, 0)">
+                    ❤ Curtir <span class="like-count">123</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mb-4">
+          <div class="card">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="orquidea.jpg" class="card-img" alt="Orquídea" />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Orquídea</h5>
+                  <p class="card-text">
+                    Flor exótica e elegante para decorações sofisticadas. 🌿
+                    Epífitas, ☀️ Preferem luz indireta, 💧 Rega moderada.
+                  </p>
+                  <p class="price">R$ 50,00</p>
+                  <button
+                    class="btn btn-dark"
+                    onclick="adicionar(this)"
+                    data-product="Orquídea"
+                    data-price="50"
+                  >
+                    Adicionar ao carrinho
+                  </button>
+                  <div class="like" onclick="curtir(this, 0)">
+                    ❤ Curtir <span class="like-count">123</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mb-4">
+          <div class="card">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img
+                  src="lirio-aranha.jpg"
+                  class="card-img"
+                  alt="Lírio-aranha"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Lírio-aranha</h5>
+                  <p class="card-text">
+                    Flor elegante e perfumada, ideal para arranjos. 🌸 Prefere
+                    sol pleno, 🌿 Solo bem drenado, 💧 Rega moderada.
+                  </p>
+                  <p class="price">R$ 35,00</p>
+                  <button
+                    class="btn btn-dark"
+                    onclick="adicionar(this)"
+                    data-product="Lírio-aranha"
+                    data-price="35"
+                  >
+                    Adicionar ao carrinho
+                  </button>
+                  <div class="like" onclick="curtir(this, 0)">
+                    ❤ Curtir <span class="like-count">123</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Contato -->
+    <div
+      class="modal fade"
+      id="contactModal"
+      tabindex="-1"
+      aria-labelledby="contactModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="contactModalLabel">
+              <i class="fas fa-envelope me-2"></i>Entre em Contato
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="contactForm">
+              <div class="mb-3">
+                <label for="modalNome" class="form-label"
+                  ><i class="fas fa-user me-1"></i>Nome</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="modalNome"
+                  placeholder="Digite seu nome"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="modalEmail" class="form-label"
+                  ><i class="fas fa-envelope me-1"></i>E-mail</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="modalEmail"
+                  placeholder="@exemplo.com"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="modalTelefone" class="form-label"
+                  ><i class="fas fa-phone me-1"></i>Telefone</label
+                >
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="modalTelefone"
+                  placeholder="(11) 99999-9999"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="modalAssunto" class="form-label"
+                  ><i class="fas fa-list me-1"></i>Assunto</label
+                >
+                <select class="form-select" id="modalAssunto" required>
+                  <option value="">Selecione um assunto</option>
+                  <option value="pedido">Pedido de Flores</option>
+                  <option value="duvida">Dúvida sobre Produtos</option>
+                  <option value="sugestao">Sugestão</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="modalMensagem" class="form-label"
+                  ><i class="fas fa-comment me-1"></i>Mensagem</label
+                >
+                <textarea
+                  class="form-control"
+                  id="modalMensagem"
+                  rows="4"
+                  placeholder="Digite sua mensagem aqui..."
+                  required
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Fechar
+            </button>
+            <button type="button" class="btn btn-primary" id="sendContact">
+              Enviar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal do Carrinho -->
+    <div
+      class="modal fade"
+      id="cartModal"
+      tabindex="-1"
+      aria-labelledby="cartModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cartModalLabel">Seu Carrinho</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div id="cart-items">
+              <p>Seu carrinho está vazio.</p>
+            </div>
+            <div id="cart-total" class="mt-3 text-end">
+              <h5>Total: R$ 0,00</h5>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Continuar Comprando
+            </button>
+            <button type="button" class="btn btn-success">
+              Finalizar Compra
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botão Voltar ao Topo -->
+    <button class="back-to-top" id="backToTop" title="Voltar ao topo">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-success text-white text-center py-3 mt-5">
+      <div class="container">
+        <p>
+          &copy; 2026 Jardim Imperial. Desenvolvedor: Eduardo Pontes | Curso:
+          Ciência da Computação - Disciplina: Desenvolvimento Front-end Web |
+          Ano: 2026
+          <i class="fas fa-heart"></i>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const backToTopButton = document.getElementById("backToTop");
+      // Mostrar/ocultar botão baseado no scroll
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.style.display = "block";
+        } else {
+          backToTopButton.style.display = "none";
+        }
+      });
+      // Função para voltar ao topo
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Carrinho
+      document.getElementById("cart-link").addEventListener("click", (e) => {
+        e.preventDefault();
+        updateCartModal();
+        const cartModal = new bootstrap.Modal(
+          document.getElementById("cartModal"),
+        );
+        cartModal.show();
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
